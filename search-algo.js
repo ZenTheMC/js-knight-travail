@@ -1,3 +1,5 @@
+import { displayMoves } from "./display-moves.js";
+
 // Employing a Graph Breadth-First-Search algo for the moves!
 
 const squareRegistry = new Map();
@@ -68,9 +70,15 @@ const knightsTravails = (start, finish) => {
       const prevSquare = path[0].getPredecessor();
       path.unshift(prevSquare);
     }
-    console.log(`The shortest path was ${path.length - 1} moves!`);
-    console.log("The moves were:");
-    path.forEach(square => console.log(square.name()));
-}
+    // console.log(`The shortest path was ${path.length - 1} moves!`);
+    // console.log("The moves were:");
+    let squareCoord = [];
+    path.forEach((square) => {
+        // console.log(square.name());
+        squareCoord.push(square.name());
+    });
+    // console.log(squareCoord);
+    displayMoves(path, squareCoord);
+};
 
 export { knightsTravails };

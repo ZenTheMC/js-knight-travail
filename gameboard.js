@@ -42,12 +42,19 @@ const gameBoard = () => {
     cellNodes.forEach((cellNode) => {
         if (defaultStartLocation.toString() === cellNode.dataset.coordArray) {
             let knightImg = document.createElement("img");
-            knightImg.src = "./assets/knight.png";
+            knightImg.src = "./assets/knight.svg";
             cellNode.appendChild(knightImg);
         }
     });
     
     document.body.appendChild(chessTable);
 };
+
+const resetBoard = (function () {
+    const resetButton = document.querySelector(".clear-board-button");
+    resetButton.addEventListener("click", function () {
+        location.reload();
+    });
+})();
 
 export { gameBoard };

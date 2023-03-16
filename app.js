@@ -1,8 +1,8 @@
 import { gameBoard } from "./gameboard.js";
-import { knightsTravails } from "./algorithm.js";
+import { uiController } from "./ui-move.js";
 
-// DOM for chess board module
+// Game Controller Module
 const appController = (function () {
-    gameBoard();
-    knightsTravails([3,3], [4,3]);
+gameBoard();
+uiController();
 })();
